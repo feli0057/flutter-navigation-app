@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 import 'screens/data_screen.dart';
+import 'screens/contact_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -79,9 +80,7 @@ class _NavigationExampleState extends State<NavigationExample> {
       body: <Widget>[
         const HomeScreen(),
         const DataScreen(),
-        const Center(
-          child: Text('Contact Screen - Coming Soon'),
-        ),
+        const ContactScreen(),
       ][currentPageIndex],
     );
   }
