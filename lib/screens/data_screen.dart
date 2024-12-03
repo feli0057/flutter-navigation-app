@@ -43,16 +43,27 @@ class _DataScreenState extends State<DataScreen> {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 final user = snapshot.data![index];
-                return Card(
-                  margin: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    title: Text('${user.firstName} ${user.lastName}'),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Gender: ${user.gender}'),
-                        Text('Email: ${user.email}'),
-                      ],
+                return Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.grey,
+                        width: 0.25,
+                      ),
+                    ),
+                  ),
+                  child: Card(
+                    margin: const EdgeInsets.all(4.0),
+                    child: ListTile(
+                      leading: const Icon(Icons.account_circle, size: 40),
+                      title: Text('${user.firstName} ${user.lastName}'),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Gender: ${user.gender}'),
+                          Text('Email: ${user.email}'),
+                        ],
+                      ),
                     ),
                   ),
                 );
